@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>ATM Events</title>
+    <style>
+      h1 {
+        font-family: "Gill Sans", sans-serif;
+      }
+    </style>
+    <script type="text/javascript" src="./index.js" defer=""></script>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+
+
+
+  <body>
+    <header>
+      <h1>Bem-vindo à ATM Events</h1>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </header>
+
+    <style>
+      body {
+        background-color: #f2f2f2;
+        background-image: url();
+        background-repeat: repeat;
+      }
+    </style>
+
+    <style>
+  .corner-image {
+    position: fixed;
+    top: 20px;
+    right: 2%;
+    width: 6%;
+    z-index: 9999;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var cornerImage = document.querySelector('.corner-image');
+
+    cornerImage.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+<img class="corner-image" src="https://cdn.discordapp.com/attachments/1100242899171557447/1113557957431537825/atm_Profile-removebg-preview.png" alt="Imagem de canto">
+
+
+
+
+    <style>
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+
+      nav li {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      nav li a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+      }
+
+      nav li a:hover {
+        background-color: #333;
+        color: #fff;
+      }
+
+      .content {
+        display: none;
+      }
+
+      .active {
+        display: block;
+      }
+    </style>
+    <style>
+      .instagram-carousel {
+        position: relative;
+        width: 400px;
+        height: 480px;
+        margin: 0 auto;
+      }
+
+      .instagram-carousel .slick-slide {
+        text-align: center;
+      }
+    </style>
+
+    <style>
+      .instagram-carousel {
+        position: relative;
+        width: 400px;
+        height: 480px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      .instagram-carousel .slick-slide {
+        text-align: center;
+      }
+    </style>
+
+    <script>
+      function showContent(contentId) {
+        var contents = document.getElementsByClassName('content');
+        for (var i = 0; i < contents.length; i++) {
+          contents[i].style.display = 'none';
+        }
+        document.getElementById(contentId).style.display = 'block';
+      }
+    </script>
+
+    <nav>
+  <ul>
+    <li><a href="#" onclick="showContent('vibe')"><svg class="bi" width="32" height="32" fill="black"><use xlink:href="bootstrap-icons.svg#shop"/></svg> Início</a></li>
+    <li><a href="#" onclick="showContent('equipe')">Equipe</a></li>
+  </ul>
+</nav>
+
+
+ <!-- Reels / Videos da ATM
+  -->
+    <div id="vibe" class="content active">
+  <h2>Vibe ATM</h2>
+  <p>Vibing wit us, ATM aways !!</p>
+
+  <main>
+      <h2>Sobre nós</h2>
+      <p>A ATM Events é um grupo multifuncional que busca estar presente em vários mercados. Nossa missão é oferecer serviços de alta qualidade no setor de eventos, incluindo produção de eventos musicais, organização de festivais, gerenciamento de artistas e muito mais.</p>
+    </main>
+
+  <div class="instagram-carousel">
+    <div>
+      <iframe src="https://www.instagram.com/p/CPtZr7YjOt2/embed?mute=1&amp;hidecaption=1" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+    </div>
+    <div>
+      <div id="youtube-video"></div>
+    </div>
+  </div>
+
+  <button class="prev-button">Anterior</button>
+  <button class="next-button">Próximo</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.3.8/jquery.mb.YTPlayer.min.js"></script>
+<script>
+  $(document).ready(function() {
+    var carousel = $('.instagram-carousel');
+
+    carousel.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: false,
+      dots: true,
+      arrows: false,
+      infinite: false
+    });
+
+    $('.prev-button').click(function() {
+      carousel.slick('slickPrev');
+    });
+
+    $('.next-button').click(function() {
+      carousel.slick('slickNext');
+    });
+
+    carousel.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+      $('.instagram-carousel iframe').each(function() {
+        $(this).attr('src', $(this).attr('src'));
+      });
+    });
+
+    $('#vibe').click(function(e) {
+      e.preventDefault();
+    });
+
+    // Configuração do vídeo do YouTube
+    $('#youtube-video').YTPlayer({
+      videoURL: 'https://www.youtube.com/watch?v=ho-BInTbXd0',
+      containment: '#youtube-video',
+      mute: true,
+      autoplay: false,
+      loop: true
+    });
+  });
+</script>
+
+
+ <!-- Equipe / Ceos da Empresa-->
+
+    <style>
+  .story-videos-carousel {
+    display: flex;
+    justify-content: space-between;
+  }
+  .story-video {
+    flex: 0 0 auto;
+    width: 320px;
+    height: 180px;
+  }
+</style>
+
+<div id="equipe" class="content">
+  <h2>Equipe</h2>
+  <p>Ceo´s: Rodneily; Martinho; Valter; Dazidário</p>
+  <p>Confira nosso canal do YouTube:</p>
+  <a href="URL_DO_CANAL_DO_YOUTUBE">Canal do YouTube</a>
+
+  <h3>Vídeos de Story</h3>
+  <div class="story-videos-carousel">
+    <div class="carousel-inner">
+      <div class="story-video">
+        <iframe width="320" height="180" src="https://www.youtube.com/embed/lNtgNzwMPFY" title="Vídeo 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <div class="story-video">
+        <iframe width="320" height="180" src="https://www.youtube.com/embed/PEDiZI3-Fbk" title="Vídeo 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <!-- Adicione mais vídeos de story conforme necessário -->
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $('.story-videos-carousel').slick({
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: false,
+        dots: false,
+        pauseOnHover: true
+      });
+    });
+  </script>
+</div>
+
+
+
+
+</div>
+</div>
+
+<head>
+  <!-- Adicione essas linhas no head -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+
+
+<!-- Contactos -->
+    <main>
+      <h2>Contactos</h2>
+      <p>Entre em contato através dos seguintes meios:</p>
+
+      <ul>
+        <li><strong>E-mail:</strong> <a href="mailto:atmoney19@gmail.com">atmoney19@gmail.com</a></li>
+        <li><strong>Instagram:</strong> <a href="https://www.instagram.com/atm.official_/">atm.official_</a></li>
+      </ul>
+    </main>
+
+
+<!-- CSS PARCEIROS  -->
+    <style>
+  #parceiros {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+  }
+
+  #parceiros h2 {
+    font-family: 'FonteManuscrita', cursive;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  #parceiros ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  #parceiros li {
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+    animation-name: moveParceiro;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  #parceiros li:hover {
+    animation-play-state: paused;
+    transform: scale(1.1);
+  }
+
+  #parceiros img {
+    max-width: 100%;
+    width: 120px; /* Defina a largura desejada para as imagens */
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  #parceiros li:hover img {
+    transform: scale(1.1);
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var parceiros = document.querySelectorAll('#parceiros li');
+
+    parceiros.forEach(function(parceiro) {
+      parceiro.addEventListener('mouseover', function() {
+        parceiros.forEach(function(item) {
+          item.style.animationPlayState = 'paused';
+        });
+      });
+
+      parceiro.addEventListener('mouseout', function() {
+        parceiros.forEach(function(item) {
+          item.style.animationPlayState = 'running';
+        });
+      });
+    });
+  });
+</script>
+
+
+<!-- Parceiros  -->
+
+
+<section id="parceiros">
+  <h2>Parceiros</h2>
+  <ul>
+    <li>
+      <a href="https://www.instagram.com/atm.official_/">
+        <img src="https://cdn.discordapp.com/attachments/1100242899171557447/1113557957431537825/atm_Profile-removebg-preview.png" alt="ATM">
+      </a>
+    </li>
+    <li>
+      <a href="https://www.parceiro2.com">
+        <img src="https://cdn.discordapp.com/icons/951504347378884648/a_34824b42e4b2fe64b72fbf5eb4a0a5ca.gif?size=2048" alt="Logo do Parceiro 2">
+      </a>
+    </li>
+    <li>
+      <a href="https://www.parceiro3.com">
+        <img src="https://cdn.discordapp.com/icons/947581824312410142/a_b19adb6daa0bc7862e467d827ef65833.gif?size=2048" alt="Logo do Parceiro 3">
+      </a>
+    </li>
+  </ul>
+</section>
+
+<footer>
+  <p>ATM Events © since 2019. Todos os direitos reservados.</p>
+</footer>
+
+
+
+
+  </body>
+
+</html>
